@@ -1,4 +1,4 @@
-class Helpers
+class Helpers < ActiveRecord::Base
   def self.current_user(session)
     @user = User.find(params[:id])
     session[:id] = @user.id
