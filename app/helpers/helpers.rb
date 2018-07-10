@@ -1,9 +1,9 @@
 class Helpers < ActiveRecord::Base
   
   def self.current_user(session)
-    @user = User.find(params[:id])
-    session[:id] = @user.id
-    @user.id
+    @user = User.find(session[:user_id])
+    
+    @user
   end
 
   def self.is_logged_in? 
