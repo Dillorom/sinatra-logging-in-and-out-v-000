@@ -17,6 +17,7 @@ class ApplicationController < Sinatra::Base
     else
       session[:user_id] = @user
       redirect '/account'
+    end
 
   end
 
