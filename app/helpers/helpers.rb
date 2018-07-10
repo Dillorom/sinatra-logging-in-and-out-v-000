@@ -6,6 +6,6 @@ class Helpers < ActiveRecord::Base
     @user
   end
 
-  def self.is_logged_in? 
+  def self.is_logged_in?(session)
   end
 end
