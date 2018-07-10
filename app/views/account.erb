@@ -8,8 +8,8 @@
   <body id="page-top">
 
     <%=if @user.is_logged_in?%>
-    <h1>Welcome <%current_user.username%></h1>
-    <h3>Your Balance: <%=current_user.balance%></h3>
+    <h1>Welcome <%self.current_user.username%></h1>
+    <h3>Your Balance: <%=self.current_user.balance%></h3>
     <%else%>
     <p>Here is a <a href="/">link</a>to homepage</p>
     <%end%>
