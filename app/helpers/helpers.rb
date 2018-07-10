@@ -7,6 +7,6 @@ class Helpers < ActiveRecord::Base
   end
 
   def self.is_logged_in?(session)
-    session[:user_id] = @user.id
+     !session[:user_id].nil?
   end
 end
