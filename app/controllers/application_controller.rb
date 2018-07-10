@@ -24,17 +24,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    if session[:user_id]
-      @current_user = Helpers.current_user(session)
-      @logged_in = Helpers.is_logged_in?(session)
-        if @current_user && @logged_in
-          erb :account
-        else
-          erb :error
-        end
-      else
-        erb :error
-      end
+    @user = User.find_by(id: session[:user_id])
+    if session[:user_id].nil?
+      erb :error
+    else
+      erb :account
+    end
   end
 
   get '/logout' do
